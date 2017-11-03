@@ -1,0 +1,16 @@
+language: node_js
+os: osx
+
+notifications:
+  webhooks:
+    urls:
+      - https://travis-ci.org/jshanthi18/gigster-qa-practical
+  email:
+    recipients:
+      - jshanthi19@gmail.com
+
+env:
+  matrix:
+    - TEST_COMMAND="npm run test"
+
+script: ${TEST_COMMAND}
