@@ -1,6 +1,18 @@
 language: node_js
 node_js:
   - "node"
+os: osx
 
-script: npm run test
+notifications:
+  webhooks:
+    urls:
+      - https://travis-ci.org/
+  email:
+    recipients:
+      - jshanthi19@gmail.com
 
+env:
+  matrix:
+    - TEST_COMMAND="npm run test"
+
+script: ${TEST_COMMAND}
