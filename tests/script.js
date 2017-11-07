@@ -23,6 +23,7 @@ for(var i = 0; i < 5; i++){
   driver.findElement(By.id("expenseButton")).click();
 }
 
+
 #generating report
 driver.findElement(By.id("start")).sendKeys("2010-01-01");
 driver.findElement(By.id("end")).sendKeys("2010-01-31");
