@@ -1,18 +1,7 @@
-language: node_js
-node_js:
-  - "node"
-os: osx
+language: python
 
-notifications:
-  webhooks:
-    urls:
-      - https://travis-ci.org/
-  email:
-    recipients:
-      - jshanthi19@gmail.com
+python:
+  - "2.7"
 
-env:
-  matrix:
-    - TEST_COMMAND="npm run test"
-
-script: ${TEST_COMMAND}
+script: 
+  - python hello.py
