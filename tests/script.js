@@ -5,15 +5,15 @@ var randomDay = require('random-day');
 let driver = new Builder().forBrowser('chrome') .build();
 driver.get("http://localhost:3000");
 
-#creates random generated username
+//creates random generated username
 var name = faker.name.findName();
 
-#signup
+//signup
 driver.findElement(By.id("signupUsername")).sendKeys(name);
 driver.findElement(By.id("signupPassword")).sendKeys("password");
 driver.findElement(By.id("signupButton")).click();
 
-#creating expenses
+//creating expenses
 driver.wait(until.elementLocated(By.id('expense')));
 for(var i = 0; i < 5; i++){
   driver.findElement(By.id("date")).sendKeys("2010-01-" + randomDay());
@@ -24,18 +24,18 @@ for(var i = 0; i < 5; i++){
 }
 
 
-#generating report
+//generating report
 driver.findElement(By.id("start")).sendKeys("2010-01-01");
 driver.findElement(By.id("end")).sendKeys("2010-01-31");
 driver.findElement(By.id("reportbutton")).click();
 
-#calculate the amount
+//calculate the amount
 driver.wait(until.elementLocated(By.xpath("//*[contains(text(),'" + "Week subtotal" + "')]")));
 driver.findElements(By.xpath("//*[contains(text(),'" + "Week subtotal" + "')]")).then(
   function(elems){
     elems.forEach(function (elem) {
-	elem.getText().then(function(textValue){
-           console.log(parseInt((textValue.split("$")[1])));
+	elem.getText().then(function(textValue, callback){
+          console.log(parseInt(textValue.split("$")[1]));
        });
     });
 }); 
