@@ -22,6 +22,7 @@ before_install:
   - npm install faker
   - npm install --save random-day
   - npm install selenium-webdriver
+  - npm install chromedriver
   - Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &  
 
 addons:
