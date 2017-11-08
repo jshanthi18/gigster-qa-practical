@@ -1,3 +1,5 @@
+dist: trusty
+sudo: false
 language: node_js
 node_js:
   - "node"
@@ -14,5 +16,15 @@ notifications:
 env:
   matrix:
     - TEST_COMMAND="npm run test"
+
+before_install:
+  - npm install --save-dev
+  - npm install faker
+  - npm install --save random-day
+  - npm install selenium-webdriver
+  - npm install chromedriver
+
+addons:
+  chrome: stable
 
 script: ${TEST_COMMAND}
