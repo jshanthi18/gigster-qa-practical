@@ -16,6 +16,7 @@
     "moment": "^2.17.1",
     "mongoose": "^4.7.6",
     "random-day": "^1.0.1",
+    "random-int": "^1.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "selenium-webdriver": "^3.6.0"
