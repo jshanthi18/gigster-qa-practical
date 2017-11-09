@@ -1,0 +1,31 @@
+dist: trusty
+sudo: false
+language: node_js
+node_js:
+  - "node"
+os: osx
+
+notifications:
+  webhooks:
+    urls:
+      - https://travis-ci.org/
+  email:
+    recipients:
+      - jshanthi19@gmail.com
+
+env:
+  matrix:
+    - TEST_COMMAND="npm run test"
+
+before_install:
+  - npm install --save-dev
+  - npm install faker
+  - npm install --save random-day
+  - npm install selenium-webdriver
+  - npm install chromedriver
+  - Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &  
+
+addons:
+  chrome: stable
+
+script: ${TEST_COMMAND}
