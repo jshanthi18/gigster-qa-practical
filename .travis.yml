@@ -6,7 +6,7 @@ os: osx
 notifications:
   webhooks:
     urls:
-      - https://travis-ci.org/jshanthi18/gigster-qa-practical
+      - https://travis-ci.org/
   email:
     recipients:
       - jshanthi19@gmail.com
